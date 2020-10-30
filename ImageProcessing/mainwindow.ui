@@ -42,7 +42,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_file">
      <attribute name="title">
@@ -84,7 +84,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Lena256.bmp</string>
+       <string>Lena8.bmp</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="et_save">
@@ -97,7 +97,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>new-Lena256.bmp</string>
+       <string>new-Lena8.bmp</string>
       </property>
      </widget>
      <widget class="QPushButton" name="bt_img_info">
@@ -345,6 +345,76 @@
       </property>
       <property name="text">
        <string> Pixel Color</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Image Scaling</string>
+     </attribute>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sx</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>90</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sy</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="et_sx">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1.2</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="et_sy">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>90</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0.8</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bt_nn_scaling">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>30</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nearest Neighbor</string>
       </property>
      </widget>
     </widget>

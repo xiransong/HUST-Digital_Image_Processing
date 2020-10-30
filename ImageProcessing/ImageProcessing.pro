@@ -17,13 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     bmp.cpp \
+    image_scaling.cpp \
     main.cpp \
-    mainwindow.cpp \
-    rawbmp.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h \
-    rawbmp.h
+    ImageProcessing.h \
+    bmp.h \
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

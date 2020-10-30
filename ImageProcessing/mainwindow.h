@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <rawbmp.h>
+#include "bmp.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,9 +31,11 @@ private slots:
 
     void on_bt_set_pixel_clicked();
 
+    void on_bt_nn_scaling_clicked();
+
 private:
     QString file_root;
-    RawBMP rawbmp;
+    BMP* bmp;
 
     Ui::MainWindow *ui;
 
