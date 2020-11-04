@@ -17,9 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     bmp.cpp \
+    gaussian_smoothing.cpp \
+    histogram_equalization.cpp \
+    image_processing_utils.cpp \
     image_scaling.cpp \
+    impulsive_noise.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    median_filtering.cpp \
+    sharpening.cpp
 
 HEADERS += \
     ImageProcessing.h \

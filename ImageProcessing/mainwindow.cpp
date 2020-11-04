@@ -173,7 +173,7 @@ void MainWindow::on_bt_set_pixel_clicked()
         qss += QString().sprintf("%.2X%.2X%.2X;}", r, g, b);
         this->ui->label_show_color->setStyleSheet(qss);
 
-        RGBQUAD& rgb = bmp->b[y][x];
+        RGBQUAD& rgb = this->bmp->b[y][x];
         rgb.rgbRed = r;
         rgb.rgbGreen = g;
         rgb.rgbBlue = b;
@@ -191,12 +191,90 @@ void MainWindow::on_bt_nn_scaling_clicked()
 
     BMP* pnew = image_scaling_nearest_neighbor(this->bmp, sx, sy);
 
-    qDebug() << "bt" << "ok1";
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_bilinear_clicked()
+{
+    double sx = this->ui->et_sx->text().toDouble();
+    double sy = this->ui->et_sy->text().toDouble();
+
+    //TODO: 检查输入合法性
+
+    BMP* pnew = image_scaling_bilinear(this->bmp, sx, sy);
 
     delete this->bmp;
-    qDebug() << "bt" << "ok2";
     this->bmp = pnew;
-
     this->renew_current_image();
-    qDebug() << "bt" << "ok3";
+}
+
+void MainWindow::on_bt_median_filtering_clicked()
+{
+    BMP* pnew = median_filtering_3x3(this->bmp);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_gaussian_smoothing_clicked()
+{
+    double sigma = this->ui->et_gaussian_sigma->text().toDouble();
+
+    BMP* pnew = gaussian_smoothing(this->bmp, sigma);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_histogram_equalization_clicked()
+{
+    BMP* pnew = histogram_equalization(this->bmp);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_sharpen_clicked()
+{
+    double k1 = this->ui->et_k1->text().toDouble();
+    double k2 = this->ui->et_k2->text().toDouble();
+
+    //TODO: 检查输入合法性
+
+    BMP* pnew = sharpening_sobel(this->bmp, k1, k2);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_impulsive_salt_clicked()
+{
+    double rate = this->ui->et_noise_rate->text().toDouble();
+
+    //TODO: 检查输入合法性
+
+    BMP* pnew = impulsive_noise_salt(this->bmp, rate);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
+}
+
+void MainWindow::on_bt_impulsive_uniform_clicked()
+{
+    double rate = this->ui->et_noise_rate->text().toDouble();
+
+    //TODO: 检查输入合法性
+
+    BMP* pnew = impulsive_noise_uniform(this->bmp, rate);
+
+    delete this->bmp;
+    this->bmp = pnew;
+    this->renew_current_image();
 }

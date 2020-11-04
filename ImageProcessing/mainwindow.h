@@ -33,6 +33,20 @@ private slots:
 
     void on_bt_nn_scaling_clicked();
 
+    void on_bt_median_filtering_clicked();
+
+    void on_bt_gaussian_smoothing_clicked();
+
+    void on_bt_bilinear_clicked();
+
+    void on_bt_histogram_equalization_clicked();
+
+    void on_bt_sharpen_clicked();
+
+    void on_bt_impulsive_salt_clicked();
+
+    void on_bt_impulsive_uniform_clicked();
+
 private:
     QString file_root;
     BMP* bmp;
